@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Route from "./components/Route";
+import Tickets from "./components/Tickets";
+import Time from "./components/Time";
+import Context from "./Context";
 
 function App() {
+
+  const [route, setRoute] = useState('')
+  const [timeA, setTimeA] = useState('')
+  const [timeB, setTimeB] = useState('')
+  const [arrival, setArrival] = useState(0)
+  const [tickets, setTickets] = useState(0)
+  const [answer, setAnswer] = useState('')
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    <Context.Provider
+    value={{
+      route, setRoute,
+      timeA, setTimeA,
+      timeB, setTimeB,
+      arrival, setArrival,
+      tickets, setTickets,
+      answer, setAnswer
+    }}>
+
+      <div className="App">
+
+          <Route /> 
+
+          {route && <Time />}
+
+          {(timeA || timeB) && <Tickets />}
+
+          {answer}
+
+      </div>
+
+    </Context.Provider>
+
+
+  )
+
 }
 
 export default App;
