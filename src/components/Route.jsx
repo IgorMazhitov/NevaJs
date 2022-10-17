@@ -7,7 +7,7 @@ import Context from "../Context";
 
         return (
 
-            <div>
+            <div className=" h-11 bg-slate-400 ">
 
                 <select name="route" id="route" value={route} onChange={(e) => setRoute(e.target.value)}>
                     <option value="">Chose route...</option>

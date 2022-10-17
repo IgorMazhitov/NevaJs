@@ -5,6 +5,32 @@ import Context from "../Context";
 
         const {timeA, setTimeA, timeB, setTimeB, route, setRoute, arrival, setArrival, tickets, setTickets, answer, setAnswer} = useContext(Context)
 
+
+        if (route === "из A в B") {
+
+            let aH = 3600000 * parseInt(timeA.split('').splice(0, 2).join(''))
+            let aM = 60000 * parseInt(timeA.split(':')[1].split('').splice(0, 2).join(''))
+
+            let total = aH + aM
+            let dif = 50 * 60000
+            total += dif
+
+            setArrival(`${Math.floor(total / 3600000)}:${Math.round((total - (Math.floor(total / 3600000) * 3600000)) / 60000)}`)
+
+        } else if (route === "из B в A") {
+
+            let aH = 3600000 * parseInt(timeB.split('').splice(0, 2).join(''))
+            let aM = 60000 * parseInt(timeB.split(':')[1].split('').splice(0, 2).join(''))
+
+            let total = aH + aM
+            let dif = 50 * 60000
+            total += dif
+
+            setArrival(`${Math.floor(total / 3600000)}:${Math.round((total - (Math.floor(total / 3600000) * 3600000)) / 60000)}`)
+
+        }
+        
+
         const clickHandler = () => {
 
             let tickPrice = 0
@@ -22,6 +48,8 @@ import Context from "../Context";
             console.log(timeA, timeB, route, tickets)
 
             let boom = tickPrice * tickets
+
+           
 
             setAnswer(`Вы выбрали ${tickets} билета по маршруту ${route} стоимостью ${boom}p.
             Это путешествие займет у вас 50 минут. 

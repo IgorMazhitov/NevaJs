@@ -28,13 +28,17 @@ function App() {
 
       <div className="App">
 
-          <Route /> 
+          <div className=" bg-slate-500">
 
-          {route && <Time />}
+            <Route /> 
 
-          {(timeA || timeB) && <Tickets />}
+            {route && <Time />}
 
-          {answer}
+            {(timeA || timeB) && <Tickets />}
+
+            {answer}
+
+          </div>
 
       </div>
 

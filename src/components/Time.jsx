@@ -5,9 +5,7 @@ import BtoA from "./BtoA";
 
     const Time = (props) => {
 
-        const aTob = ["18:00(из A в B)", "18:30(из A в B)", ]
-
-        const {time, setTime, route} = useContext(Context)
+        const {route} = useContext(Context)
 
         if (route === "из A в B") {
 
