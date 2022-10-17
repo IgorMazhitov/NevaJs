@@ -3,6 +3,7 @@ import Route from "./components/Route";
 import Tickets from "./components/Tickets";
 import Time from "./components/Time";
 import Context from "./Context";
+import "./index.css"
 
 function App() {
 
@@ -26,9 +27,7 @@ function App() {
       answer, setAnswer
     }}>
 
-      <div className="App">
-
-          <div className=" bg-slate-500">
+      <div className="App" class="w-screen h-screen flex flex-col justify-start items-center">
 
             <Route /> 
 
@@ -37,8 +36,6 @@ function App() {
             {(timeA || timeB) && <Tickets />}
 
             {answer}
-
-          </div>
 
       </div>
 

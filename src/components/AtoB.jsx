@@ -7,10 +7,10 @@ import Context from "../Context";
 
         return (
             
-            <div>
+            <div className="flex flex-col justify-center items-center h-24 w-56 m-5">
 
-                <label for="time">Выберите время</label>
-                <select name="time" id="time" value={timeA} onChange={e => setTimeA(e.target.value)}>
+                <label className="text-lg" for="time">Выберите время</label>
+                <select className="w-56 p-2 bg-slate-300 rounded-lg" name="time" id="time" value={timeA} onChange={e => setTimeA(e.target.value)}>
                     <option value="">Choose time...</option>
                     <option value="18:00(из A в B)">18:00(из A в B)</option>
                     <option value="18:30(из A в B)">18:30(из A в B)</option>

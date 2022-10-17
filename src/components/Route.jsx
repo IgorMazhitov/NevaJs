@@ -7,9 +7,10 @@ import Context from "../Context";
 
         return (
 
-            <div className=" h-11 bg-slate-400 ">
+            <div className="flex flex-col justify-center items-center h-24 w-56 m-5">
 
-                <select name="route" id="route" value={route} onChange={(e) => setRoute(e.target.value)}>
+                <label className="text-lg" for="route">Выберите направление</label>
+                <select className="w-56 p-2 bg-slate-300 rounded-lg" name="route" id="route" value={route} onChange={(e) => setRoute(e.target.value)}>
                     <option value="">Chose route...</option>
                     <option value="из A в B">из A в B</option>
                     <option value="из B в A">из B в A</option>

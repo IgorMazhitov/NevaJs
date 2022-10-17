@@ -66,11 +66,11 @@ import Context from "../Context";
 
         return (
 
-            <div>
+            <div className="flex flex-col justify-start items-center h-48 w-56 m-5">
 
-                <label for="num">Количество билетов</label>
-                <input id="num" type="number" value={tickets} onChange={e => setTickets(e.target.value)}/>
-                <button onClick={() => clickHandler()}>Посчитать</button>
+                <label className="text-lg" for="num">Количество билетов</label>
+                <input className="w-56 p-2 bg-slate-300 rounded-lg" id="num" type="number" value={tickets} onChange={e => setTickets(e.target.value)}/>
+                <button className=" w-48 h-16 rounded-lg bg-yellow-400 my-3 text-lg font-bold hover:bg-yellow-600" onClick={() => clickHandler()}>Посчитать</button>
 
             </div>
 
