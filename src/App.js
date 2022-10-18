@@ -14,6 +14,11 @@ function App() {
   const [tickets, setTickets] = useState(0)
   const [answer, setAnswer] = useState('')
 
+  const cleanAnswer = () => {
+
+    setAnswer('')
+
+  }
 
   return (
 
@@ -35,7 +40,15 @@ function App() {
 
             {(timeA || timeB) && <Tickets />}
 
-            {answer}
+            {answer && 
+            <div className=" w-56 text-lg text-justify bg-slate-200 m-1 p-3 rounded-lg flex flex-col justify-start items-center"> 
+
+              {answer}
+              
+              <button className=" w-32 h-14 bg-yellow-300 m-2 rounded-lg shadow-md hover:shadow-lg text-lg font-bold"
+              onClick={() => cleanAnswer()}> Очистить </button>
+
+            </div>}
 
       </div>
 

@@ -48,7 +48,7 @@ import AtoB from "./AtoB";
                     {timeA && 
                     
                     <div className="flex flex-col justify-center items-center h-7 w-56 m-5"> 
-                        <label className="text-lg" for="time">Выберите время</label>
+                        <label className="text-lg underline" for="time">Выберите время</label>
                         <select className="w-56 p-2 bg-slate-300 rounded-lg" name="time" id="time" value={timeB} onChange={e => setTimeB(e.target.value)}>
                             <option value="">Choose...</option>
                             {bTOa.map(el => {
@@ -91,7 +91,7 @@ import AtoB from "./AtoB";
 
                 <div className="flex flex-col justify-center items-center h-24 w-56 m-5">
     
-                    <label className="text-lg" for="time">Выберите время</label>
+                    <label className="text-lg underline" for="time">Выберите время</label>
                     <select className="w-56 p-2 bg-slate-300 rounded-lg" name="time" id="time" value={timeB} onChange={e => setTimeB(e.target.value)}>
                         <option value="">Choose...</option>
                         {bTOa.map(el => <option value={el.value}>{el.value}</option>)}
